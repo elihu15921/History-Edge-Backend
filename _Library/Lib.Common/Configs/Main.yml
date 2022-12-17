@@ -1,0 +1,26 @@
+﻿Program:
+  Name: -app
+  IIOT.File.Name: IIOT 
+  Foundation.Document.Name: Foundation.xml
+
+Propertie:
+  Debug: true
+
+Modules:
+  - Enable: true
+    Launcher: CsvFile
+    Frequency: 1
+    Arguments: Edge.CsvFile.WorkBuilder, Edge.CsvFile.dll
+    IIOT.Path: Configs/IIOT/CsvFile.json
+
+  - Enable: true
+    Launcher: ModbusTcp
+    Frequency: 1
+    Arguments: Edge.ModbusTcp.WorkBuilder, Edge.ModbusTcp.dll
+    IIOT.Path: Configs/IIOT/ModbusTcp.json
+
+  - Enable: false
+    Launcher: OpcUa
+    Frequency: 1
+    Arguments: Edge.OpcUA.WorkBuilder, Edge.OpcUa.dll
+    IIOT.Path: Configs/IIOT/OpcUa.json
